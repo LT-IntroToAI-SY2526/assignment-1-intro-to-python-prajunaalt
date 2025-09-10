@@ -26,7 +26,7 @@ Example: "I'm learning Python basics in a high school programming class.
 I have some experience with Java. Can you create 5-7 practice problems that cover..."
 
 I'm learning AI in a high school programming class. 
-I have some experience with Python but need to refresh to learn AI. Can you create 5 practice problems that cover the basic info?"
+I have some experience with Python but need to refresh to learn AI. Act as a mentor and create 5 practice problems that cover the basic info?"
 """
 
 
@@ -57,15 +57,15 @@ Write a function normalize(lst) that takes a list of numbers and returns a new l
  the maximum in the list (so the biggest number becomes 1.0). This is a simple form of feature scaling, which is common in AI.
 
 answer:
- def normalize(lst):
+"""
+def normalize(lst):
     max_value = max(lst)
     return [x / max_value for x in lst]
 
-# Example
-print(normalize([2, 4, 10]))  # Output: [0.2, 0.4, 1.0]
 
 
- 
+
+""" 
  Problem 2: Count Word Frequencies
 
 Topic: Strings, dictionaries, basic NLP idea
@@ -76,6 +76,8 @@ Return the result as a dictionary.
 Output: {'ai': 2, 'is': 2, 'cool': 1, 'the': 1, 'future': 1}
 
 answer:
+The AI helped me fix the punctuation bit.
+"""
 import string
 
 def count_words(sentence):
@@ -92,11 +94,9 @@ def count_words(sentence):
     
     return freq
 
-# Example
-print(count_words("AI is cool. AI is the future."))
-# Output: {'ai': 2, 'is': 2, 'cool': 1, 'the': 1, 'future': 1}
 
 
+"""
 Problem 3: Predict Student Pass/Fail
 
 Topic: Functions, conditionals, lists
@@ -104,6 +104,7 @@ Description:
 Write a function predict_pass(grades) that takes a list of grades and 
 returns "Pass" if the average is 60 or above, otherwise "Fail".
 
+"""
 def predict_pass(grades):
     average = sum(grades) / len(grades)
     if average >= 60:
@@ -111,19 +112,17 @@ def predict_pass(grades):
     else:
         return "Fail"
 
-# Examples
-print(predict_pass([70, 65, 80]))  # Output: "Pass"
-print(predict_pass([40, 55, 50]))  # Output: "Fail"
 
 
 
 
+"""
 Problem 4: One-Hot Encoding Simulator
 
 Topic: Lists, dictionaries
 Description:
 One-hot encoding is used in AI to convert categories into numbers. Write a function one_hot_encode(data) that takes a list of categories (e.g., ["cat", "dog", "cat"]) and returns a list of one-hot encoded vectors.
-
+"""
 def one_hot_encode(data):
     unique = list(set(data))
     encoding = {}
@@ -135,11 +134,8 @@ def one_hot_encode(data):
 
     return encoding
 
-# Example
-print(one_hot_encode(["cat", "dog", "fish"]))
-# Output might be:
-# {'fish': [1, 0, 0], 'dog': [0, 1, 0], 'cat': [0, 0, 1]}
 
+"""
 
 
 Problem 5: Flatten a 2D List (like a matrix)
@@ -147,7 +143,7 @@ Problem 5: Flatten a 2D List (like a matrix)
 Topic: Nested loops, data structure prep
 Description:
 In AI, data often comes as 2D arrays (like images). Write a function to flatten a 2D list into a 1D list.
-
+"""
 def flatten(matrix):
     flat_list = []
     for row in matrix:
@@ -155,8 +151,6 @@ def flatten(matrix):
             flat_list.append(item)
     return flat_list
 
-# Example
-print(flatten([[1, 2], [3, 4]]))  # Output: [1, 2, 3, 4]
 
 """
 
@@ -174,7 +168,7 @@ print(flatten([[1, 2], [3, 4]]))  # Output: [1, 2, 3, 4]
 # PART 3: TESTING YOUR SOLUTIONS
 # =============================================================================
 
-
+"""
 """
 Test all your solutions with different inputs
 
@@ -188,17 +182,22 @@ print(f"is_even(7): {is_even(7)}")  # Should print False
 
 print("Testing Problem 1:")
 # Add your tests here
-
+print(normalize([2, 4, 10]))  # Output: [0.2, 0.4, 1.0]
 print("\nTesting Problem 2:")
 # Add your tests here
-
+print(count_words("AI is cool. AI is the future."))
 print("\nTesting Problem 3:")
 # Add your tests here
-
+# Examples
+print(predict_pass([70, 65, 80]))  # Output: "Pass"
+print(predict_pass([40, 55, 50]))  # Output: "Fail"
 print("\nTesting Problem 4:")
 # Add your tests here
-
+print(one_hot_encode(["cat", "dog", "fish"]))
+# Output might be:
+# {'fish': [1, 0, 0], 'dog': [0, 1, 0], 'cat': [0, 0, 1]}
 print("\nTesting Problem 5:")
 # Add your tests here
+print(flatten([[1, 2], [3, 4]]))  # Output: [1, 2, 3, 4]
 
 
