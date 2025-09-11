@@ -52,7 +52,6 @@ def factorial(n: int) -> int:
     return sum
 
 
-print(factorial(6))
 T = TypeVar("T")
 
 
@@ -143,8 +142,16 @@ def duck_duck_goose(lst: List[str]) -> List[str]:
     Returns:
         the resulting list after playing duck duck goose
     """
-    while(len(lst)>2):
-        lst.pop(2)
+    index = 0
+    count = 0
+    while len(lst) > 2:
+        count += 1
+        if count == 3:
+            lst.pop(index)
+            count = 0
+        else:
+            index += 1
+        index %= len(lst) 
     return lst
     
 
